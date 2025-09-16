@@ -1,0 +1,22 @@
+John Doe
+Senior Software Engineer
+
+Experience:
+• 5 years Python development
+• Machine Learning with TensorFlow and PyTorch
+• AWS cloud architecture
+• Microservices and API design
+
+Education:
+• BS Computer Science, MIT (2018)
+• MS Artificial Intelligence, Stanford (2020)
+
+Skills:
+Python, JavaScript, React, Node.js, Docker, Kubernetes, PostgreSQL, MongoDB
+
+Projects:
+- Built recommendation system serving 1M+ users
+- Designed distributed data processing pipeline
+- Led team of 5 engineers on ML platform
+
+Contact: john.doe@email.com | (555) 123-4567

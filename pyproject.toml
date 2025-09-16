@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "skill-gap-analyst"
+version = "0.1.0"
+description = "Analyze skill gaps for AI roles using LLMs and market data."
+authors = [
+    {name = "Your Name", email = "your@email.com"}
+]
+requires-python = ">=3.11"
+dependencies = [
+    "langchain",
+    "langgraph",
+    "pydantic>=2",
+    "google-generativeai",
+    "langchain-google-genai",
+    "mistralai",
+    "langchain-mistralai",
+    "httpx",
+    "python-dotenv",
+    "pdfminer.six",
+    "pypdf",
+    "orjson",
+    "numpy",
+    "scikit-learn",
+    "structlog",
+    "typer[all]",
+    "rich",
+    "trafilatura",
+    "readability-lxml",
+    "beautifulsoup4",
+    "tavily-python",
+    "tenacity",
+]
+
+[project.optional-dependencies]
+ui = ["streamlit"]
+dev = ["pytest", "pytest-cov", "ruff", "black"]
+pdf = ["pymupdf4llm"]
+
+[project.scripts]
+skillgap = "src.app.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+select = ["E", "F", "I", "W", "N", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.isort]
+known-first-party = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=term-missing"
+testpaths = ["tests"]
+markers = [
+    "integration: marks tests as integration tests (requiring API keys)"
+]
